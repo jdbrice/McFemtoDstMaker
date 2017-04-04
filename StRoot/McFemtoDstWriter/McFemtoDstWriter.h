@@ -62,11 +62,11 @@ protected:
 
 // The Branch Writers
 #ifndef __CINT__	// gets confused by std::shared_ptr<>
-	FemtoBranchWriter<FemtoEvent> _few;
-	FemtoTClonesArrayWriter<FemtoTrack> _ftw;
-	FemtoTClonesArrayWriter<FemtoMcTrack> _fmcw;
-	FemtoTClonesArrayWriter<FemtoMtdPidTraits> _fmtdw;
-	FemtoTClonesArrayWriter<FemtoTrackHelix> _fhw;
+	BranchWriter<FemtoEvent> _few;
+	TClonesArrayWriter<FemtoTrack> _ftw;
+	TClonesArrayWriter<FemtoMcTrack> _fmcw;
+	TClonesArrayWriter<FemtoMtdPidTraits> _fmtdw;
+	TClonesArrayWriter<FemtoTrackHelix> _fhw;
 
 	StThreeVectorF      _pvPosition;
 #endif
