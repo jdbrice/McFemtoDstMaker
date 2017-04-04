@@ -1,0 +1,26 @@
+<job  name="Pythia_StarSim_BFC" maxFilesPerProcess="50" filesPerHour="3000" simulateSubmission ="false" fileListSyntax="paths" >
+
+	<stdout URL="file:/star/data03/pwg/jdb/scratch/log/log_$JOBID.log" />
+	<stderr URL="file:/star/data03/pwg/jdb/scratch/log/err_$JOBID.err" />
+
+	<input URL="filelist:/star/u/jdb/work/McFemtoDstMaker/PythiaPP200.lis"  />
+
+	<output fromScratch="*.root" toURL="file:/star/data03/pwg/jdb/scratch/FemtoDst/" />
+
+	<command>
+		starver SL16c
+		./run.sh 1001 $FILELIST $JOBID
+	</command>
+
+	<SandBox>
+		<Package>
+			<File>file:./run.sh</File>
+			<File>file:./doEvent.C</File>
+			<File>file:./.sl64_gcc482/</File>
+		</Package> 
+	</SandBox>
+
+	<Generator> 
+		<Location>/star/data03/pwg/jdb/scratch/gen</Location> 
+	</Generator> 
+</job>

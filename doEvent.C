@@ -47,9 +47,10 @@ int doEvent(   Int_t nEvents=100,
 
     McFemtoDstWriter *fmtWriter = new McFemtoDstWriter( "MtdMc");
     fmtWriter->SetDebug(0);
-
-    // StMtdEmbedding *embed = new StMtdEmbedding("embed");
-    // embed->setOutFileName( OutRoot );
+    fmtWriter->setOutputFileName( OutRoot );
+    
+    
+    
 
     chain->Init();
     if(nEvents<0)nEvents = 1e6;

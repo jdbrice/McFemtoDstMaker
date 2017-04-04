@@ -1,7 +1,7 @@
 #ifndef MC_FEMTO_DST_WRITER_H
 #define MC_FEMTO_DST_WRITER_H
 
-
+#include <string>
 
 // StRoot
 #include "StMaker.h"
@@ -37,7 +37,13 @@ public:
 	Int_t Make();
 	Int_t Finish();
 
+	void setOutputFileName( std::string fn){
+		this->_outputFilename = fn;
+	}
+
 protected:
+
+	std::string _outputFilename;
 
 	void addTrack( StTrackNode * track );
 	void addTrackHelix( StTrackNode * track );

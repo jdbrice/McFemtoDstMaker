@@ -37,6 +37,7 @@ int NCommonHits = 10;
 
 McFemtoDstWriter::McFemtoDstWriter( const Char_t *name ) : StMaker( name )
 {
+	this->_outputFilename = "FemtoDst.root";
 }
 
 McFemtoDstWriter::~McFemtoDstWriter()
@@ -47,7 +48,7 @@ McFemtoDstWriter::~McFemtoDstWriter()
 Int_t McFemtoDstWriter::Init()
 {
 
-	this->_rootFile = new TFile( "McFemtoDst.root", "RECREATE" );
+	this->_rootFile = new TFile( this->_outputFilename.c_str(), "RECREATE" );
 	this->_rootFile->cd();
 	this->_tree = new TTree( "FemtoDst", "FemtoDst with MC info" );
 
